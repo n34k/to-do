@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="content">
+        <div class="add-proj-box">
+            <div class="proj-top">
+                <h2>Add Project</h2>
+                <img class="x" id="x1" src="images/x.png" alt="x">
+            </div>
+            <div class="proj-bottom">
+                <h3>Name</h3>
+                <input class="project-input" type="text">
+                <button class="add" id="add1">Add</button>
+            </div>
+        </div>
+        <div class="overlay"></div>
+        <div class="add-task-box">
+            <div class="proj-top">
+                <h2>Add Task</h2>
+                <img class="x" id="x2" src="images/x.png" alt="x">
+            </div>
+            <div class="task-bottom">
+                <div>
+                    <p>Name</p>
+                    <input type="text" id="task-name">
+                </div>
+                <div>
+                    <p>Due Date</p>
+                    <input type="text" id="task-date">
+                </div>
+                <div>
+                    <p>Details</p>
+                    <input type="text" id="task-detail">
+                </div>
+                <button id="add2" class="add">Add</button>
+            </div>
+        </div>
+        <div class="header">
+            ToDo
+        </div>
+        <div class="middle">
+            <div class="sidebar">
+                <h3>Projects</h3>
+                <div class="projects">
+                    
+                </div>
+                <div class="add-button"><b>+</b> Add Projects</div>
+            </div>
+            <div class="main">
+                <div class="tasks">
+
+                </div>
+                <div class="add-task">
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Made by Nick Davis
+        </div>
+        <script src="main.js"></script>
+    </div>
+</body>
+</html>
