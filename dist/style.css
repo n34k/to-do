@@ -15,20 +15,38 @@
     background-color: darkcyan;
     padding: 30px;
     font-size: 40px;
+    height: 15vh;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 45px;
+}
+
+.bell {
+    height: 40px;
+    width: 40px;
 }
 
 .middle {
    display: flex;
    flex-direction: row;
+   height: 80vh;
 }
 
 .sidebar {
     background-color: rgb(208, 213, 213);
     padding: 15px;
     width: 20vw;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
 
 .add-button {
@@ -96,16 +114,20 @@
 }
 
 .main {
-    height: 83vh;
-    width: 90vw;
+    height: 80vh;
+    width: 80vw;
+    padding: 15px;
 }
 
 
 .footer {
     background-color: darkcyan;
+    height: 5vh;
     padding: 5px;
     display: flex;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
 }
 
 p {
@@ -126,7 +148,7 @@ p {
   .taskInfo {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 5px;
   }
 
   .circle {
@@ -144,5 +166,34 @@ p {
   }
 
   .taskDate {
-    margin-left: auto;
+    margin-left: 30px;
+  }
+
+  .task-details {
+    margin-left: 30px;
+    font-size: 20px;
+  }
+
+  .project-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .project-name:hover {
+    opacity: .5;
+    cursor: pointer;
+    background-color: antiquewhite;
+  }
+
+  .project-name:hover .trash{
+    opacity: 1;
+    
+  }
+
+  .trash {
+    opacity: 0;
+    height: 15px;
+    width: 15px;
   }

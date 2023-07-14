@@ -92,12 +92,23 @@ const DOM = (() => {
         })
     }
 
+    const deleteProjectHandler = (projectIndex) => {
+        ToDo.projectsList.splice(projectIndex, 1);
+        loadProjects();
+      };
+
     const loadProjects = ()  => {
         removeChildren(projBox);
         for (let i = 0; i < ToDo.projectsList.length; i++) {
-            const projectName = document.createElement("h4");
+            const projectName = document.createElement("h3");
+            projectName.classList.add("project-name")
             projectName.innerHTML = `${i + 1}. ${ToDo.projectsList[i].name}`;
             projBox.appendChild(projectName);
+            const trashCan = document.createElement("img");
+            trashCan.src = "images/trash.png"
+            trashCan.classList.add("trash")
+            trashCan.addEventListener("click", () => deleteProjectHandler(i));
+            projectName.appendChild(trashCan);
             projectNameClick(projectName);
         }
     }
@@ -134,9 +145,12 @@ const DOM = (() => {
             taskInfo.appendChild(taskName);
             taskName.innerHTML = ToDo.projectsList[currentProj].tasks[k].title;
 
-            const taskDetails = document.createElement("p");
-            taskInfo.appendChild(taskDetails);
-            taskDetails.innerHTML = ToDo.projectsList[currentProj].tasks[k].details;
+            if(ToDo.projectsList[currentProj].tasks[k].details != "") {
+                const taskDetails = document.createElement("p");
+                taskDetails.classList.add("task-details")
+                taskInfo.appendChild(taskDetails);
+                taskDetails.innerHTML = "Details: " + ToDo.projectsList[currentProj].tasks[k].details;
+            }
             
             if(ToDo.projectsList[currentProj].tasks[k].dueDate != "") {
                 const taskDate = document.createElement("h4");
@@ -201,7 +215,3 @@ const buttonFunctionality = () => {
 
 
 export {buttonFunctionality};
-
-
-
-
